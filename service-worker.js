@@ -1,4 +1,4 @@
-const CACHE = 'marble-bloom-v0.5.0';
+const CACHE = 'marble-bloom-v0.7.0';
 const APP_SHELL = [
   './',
   './index.html',
