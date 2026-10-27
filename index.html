@@ -119,28 +119,22 @@ button{touch-action:manipulation;user-select:none;-webkit-user-select:none}
 }
 @media(max-height:760px){.art-svg[data-portrait="true"]{height:190px}.collection-item .art-svg[data-portrait="true"]{height:112px}}
 
-/* V0.9: richer level color, optional extra tray slot and rewarding mastery. */
+/* Level color, optional extra tray slot and match feedback. */
 :root{--level-a:#f58ba5;--level-b:#6dbde8;--level-c:#f4ce63}
 .progress-fill{background:linear-gradient(90deg,var(--level-a),var(--level-c))}
 .art-card{background:radial-gradient(circle at 12% 5%,color-mix(in srgb,var(--level-b) 12%,#fff) 0%,transparent 42%),radial-gradient(circle at 95% 90%,color-mix(in srgb,var(--level-a) 10%,#fff) 0%,transparent 42%),#fffaf4;border-color:color-mix(in srgb,var(--level-c) 20%,#eee2da)}
 .art-title{color:color-mix(in srgb,var(--level-a) 52%,#65545b)}
 .art-progress{color:#796c70}
-.bloom-goals{display:flex;justify-content:center;gap:5px;flex-wrap:wrap;margin:4px 0 1px;position:relative;z-index:2}
-.bloom-goal{font-size:9px;font-weight:850;letter-spacing:.15px;border-radius:99px;padding:4px 7px;background:#f2ece8;color:#a09091;border:1px solid #e8deda;transition:.2s}
-.bloom-goal.active{background:color-mix(in srgb,var(--level-b) 14%,#fff);border-color:color-mix(in srgb,var(--level-b) 35%,#e8deda);color:color-mix(in srgb,var(--level-b) 62%,#43505a)}
-.bloom-goal.lost{opacity:.48;text-decoration:line-through}
 .tray-actions{display:flex;align-items:center;gap:8px}.slot-unlock{border:1px solid color-mix(in srgb,var(--level-b) 34%,#dfd7d2);border-radius:99px;background:#fff;color:color-mix(in srgb,var(--level-b) 62%,#3b5862);font-size:9px;font-weight:900;padding:5px 8px;box-shadow:0 2px 0 #e9e1dc;white-space:nowrap}.slot-unlock:not(:disabled):active{transform:translateY(1px);box-shadow:none}.slot-unlock:disabled{opacity:.66}
 .tray{grid-template-columns:repeat(8,minmax(0,1fr));gap:4px;padding:8px 7px}.locked-slot{background:repeating-linear-gradient(135deg,#ddd4cf 0 5px,#e8e0dc 5px 10px);border-style:dashed;filter:none;opacity:1}.slot-lock{font-size:9px;color:#9a8d8d;text-shadow:0 1px #fff}.locked-slot:after{content:"";position:absolute;width:9px;height:7px;border:2px solid #9a8d8d;border-top:0;border-radius:2px;top:50%;left:50%;transform:translate(-50%,-25%)}.locked-slot:before{content:"";position:absolute;width:7px;height:7px;border:2px solid #9a8d8d;border-bottom:0;border-radius:7px 7px 0 0;top:22%;left:50%;transform:translateX(-50%)}
 .marble::before{content:"";position:absolute;inset:12%;border-radius:50%;border:1px solid color-mix(in srgb,var(--ball) 45%,white);opacity:.48;box-shadow:inset 0 0 0 2px color-mix(in srgb,var(--ball) 84%,#5b4255)}
 .combo-pulse{animation:comboPulse .55s ease}.bloom-spark{--angle:0deg;--spark:#ef9baa;position:absolute;z-index:8;left:50%;top:54%;width:7px;height:7px;background:var(--spark);border-radius:2px;pointer-events:none;animation:sparkOut .65s ease-out forwards;transform:rotate(var(--angle)) translateX(20px)}
 .reward-btn{width:100%;border:1px solid color-mix(in srgb,var(--level-b) 38%,#d7e7e3);border-radius:13px;padding:14px 11px;margin-top:12px;background:linear-gradient(135deg,color-mix(in srgb,var(--level-b) 22%,white),color-mix(in srgb,var(--level-c) 20%,white));color:#4c5b60;font-weight:850;box-shadow:0 3px 0 #dde3df}.ad-orbit{font-size:54px;color:var(--level-c);margin:18px 0 5px;animation:adOrbit 1.1s ease-in-out infinite}
-.petal-score{display:flex;justify-content:center;gap:9px;font-size:30px;color:#ddd2cf;margin:8px 0}.petal-score .earned{color:var(--level-a);filter:drop-shadow(0 2px 3px color-mix(in srgb,var(--level-a) 35%,transparent));animation:bounce .36s ease}.petal-criteria{display:flex;justify-content:center;gap:5px;flex-wrap:wrap}.petal-criteria span{font-size:10px;font-weight:800;border-radius:99px;padding:5px 7px}.petal-criteria .met{background:#eaf6f1;color:#4d8f7d}.petal-criteria .missed{background:#f2ece9;color:#9b8b8a}
 .wave-title{font:700 19px Georgia,serif;margin:7px 0 9px;color:#554750}.wave-gallery{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:5px;background:#f7f0e9;border-radius:15px;padding:7px}.wave-art{min-width:0}.wave-art .art-svg{width:100%;height:62px;margin:-4px auto -5px;border-radius:7px}.wave-art span{display:block;font-size:7px;font-weight:800;line-height:1.15;color:#817477;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 @keyframes comboPulse{35%{transform:scale(1.018);box-shadow:0 0 0 5px color-mix(in srgb,var(--level-a) 17%,transparent),inset 0 -4px 12px #efdcd039}100%{transform:scale(1)}}
 @keyframes sparkOut{0%{opacity:1;transform:rotate(var(--angle)) translateX(8px) scale(.6)}100%{opacity:0;transform:rotate(var(--angle)) translateX(84px) scale(1.2)}}
 @keyframes adOrbit{50%{transform:rotate(180deg) scale(1.16)}100%{transform:rotate(360deg)}}
-@media(max-width:365px){.slot-unlock{font-size:8px;padding:5px 6px}.tray-actions{gap:5px}.bloom-goal{font-size:8px;padding:3px 5px}.tray{gap:3px;padding-left:5px;padding-right:5px}}
-@media(max-height:760px){.bloom-goals{margin-top:1px}.bloom-goal{padding:3px 6px}.art-card{min-height:205px}}
+@media(max-width:365px){.slot-unlock{font-size:8px;padding:5px 6px}.tray-actions{gap:5px}.tray{gap:3px;padding-left:5px;padding-right:5px}}
 
 </style>
 </head>
@@ -164,7 +158,6 @@ button{touch-action:manipulation;user-select:none;-webkit-user-select:none}
       <div class="art-title" id="artTitle">Peach Petals</div>
       <div id="artWork"></div>
       <div class="art-progress" id="artProgress">0 / 2 colors added</div>
-      <div class="bloom-goals" id="bloomGoals" aria-label="Perfect Bloom goals"></div>
     </section>
     <div class="worktop">
       <div class="section-head"><span class="section-title">SORTING TRAY</span><span class="tray-actions"><button class="slot-unlock" id="slotUnlock" type="button">▶ +1 slot</button><span class="section-note" id="trayCount">0 / 7</span></span></div>
@@ -314,15 +307,13 @@ Object.assign(globalThis.MARBLE_ART ||= {}, {"pixel-knight":{"#8caee6,#8caee6,#f
       const legacyCurrent=LEVELS.findIndex(level=>level.id===LEGACY_ORDER[index(value.current)]);
       const current=value.orderVersion===ORDER_VERSION?index(value.current):Math.max(0,legacyCurrent);
       const furthest=Math.min(LEVELS.length-1,Math.max(-1,...Object.keys(completed).map(Number))+1);
-      const blooms={};
-      if(value.blooms&&typeof value.blooms==='object'&&!Array.isArray(value.blooms))LEVELS.forEach(level=>{const petals=Number(value.blooms[level.id]);if(Number.isInteger(petals)&&petals>=0&&petals<=3)blooms[level.id]=petals});
-      return {orderVersion:ORDER_VERSION,paletteVersion:PALETTE_VERSION,current,unlocked:Math.max(current,furthest,value.orderVersion===ORDER_VERSION?index(value.unlocked):0),completed,blooms,sound:typeof value.sound==='boolean'?value.sound:true};
+      return {orderVersion:ORDER_VERSION,paletteVersion:PALETTE_VERSION,current,unlocked:Math.max(current,furthest,value.orderVersion===ORDER_VERSION?index(value.unlocked):0),completed,sound:typeof value.sound==='boolean'?value.sound:true};
     }
     function normalizeEvents(raw){
       if(!Array.isArray(raw))return [];
       return raw.filter(e=>e&&typeof e==='object'&&!Array.isArray(e)&&typeof e.time==='string'&&Number.isFinite(Date.parse(e.time))&&typeof e.type==='string'&&/^[a-z_]{1,60}$/.test(e.type)&&Number.isInteger(e.level)&&e.level>=1&&e.level<=LEVELS.length).slice(-EVENT_LIMIT).map(e=>{
         const clean={time:e.time,type:e.type,level:e.level};
-        ['pipe','color','moves','matches','combo','petals','duration_seconds'].forEach(k=>{if(Number.isFinite(e[k])&&e[k]>=0)clean[k]=e[k]});
+        ['pipe','color','moves','matches','combo','duration_seconds'].forEach(k=>{if(Number.isFinite(e[k])&&e[k]>=0)clean[k]=e[k]});
         ['round_id','session_id','source','from_result'].forEach(k=>{if(typeof e[k]==='string')clean[k]=e[k].slice(0,200)});
         return clean;
       });
@@ -377,8 +368,6 @@ Object.assign(globalThis.MARBLE_ART ||= {}, {"pixel-knight":{"#8caee6,#8caee6,#f
       $('artTitle').textContent=lvl.name;
       renderArtwork(lvl,groups);
       $('artProgress').textContent=`${done} / ${groups} color matches`;
-      const firstTry=state.attempt===1,noHint=state.hintsUsed===0,tidy=state.trayPeak<=5;
-      $('bloomGoals').innerHTML=[[noHint,'No Hint'],[tidy,'Tray ≤5'],[firstTry,'First Try']].map(([ok,label])=>`<span class="bloom-goal ${ok?'active':'lost'}" title="${ok?'Goal active':'Goal missed'}">✿ ${label}</span>`).join('');
       $('trayCount').textContent=`${state.tray.length} / ${state.trayCapacity}`;
       $('tray').innerHTML=Array.from({length:MAX_TRAY},(_,i)=>{
         const lockedSlot=i>=state.trayCapacity;
@@ -440,14 +429,14 @@ Object.assign(globalThis.MARBLE_ART ||= {}, {"pixel-knight":{"#8caee6,#8caee6,#f
       generation++;clearFlights();clearTimeout(toastTimer);$('toast').classList.remove('show');closeModal(false);
       locked=false;const lvl=LEVELS[index];
       state={levelIndex:index,tubes:lvl.tubes.map(x=>x.slice()),tray:[],painted:[],ended:false,result:null,started:Date.now(),moves:0,generation,roundId:`${sessionId}:${generation}`,source,landedIndex:null,
-        trayCapacity:carry.adUnlocked?MAX_TRAY:BASE_TRAY,adUnlocked:!!carry.adUnlocked,adUsed:!!carry.adUsed,attempt:carry.attempt||1,hintsUsed:0,trayPeak:0,combo:0,maxCombo:0,lastMatchMove:-99};
+        trayCapacity:carry.adUnlocked?MAX_TRAY:BASE_TRAY,adUnlocked:!!carry.adUnlocked,adUsed:!!carry.adUsed,combo:0,maxCombo:0,lastMatchMove:-99};
       progress.current=index;progress.unlocked=Math.max(progress.unlocked,index);save();render();log('level_start');
     }
     function restartLevel(source='restart_button'){
       if(locked||!state)return;
       const index=state.levelIndex;
       log('level_restart',{moves:state.moves,source,from_result:state.result||'active'});
-      startLevel(index,source,{adUnlocked:state.adUnlocked,adUsed:state.adUsed,attempt:state.attempt+1});toast('Fresh start ✿');
+      startLevel(index,source,{adUnlocked:state.adUnlocked,adUsed:state.adUsed});toast('Fresh start ✿');
     }
     function startupLevel(){
       if(!progress.completed[progress.current])return progress.current;
@@ -466,7 +455,6 @@ Object.assign(globalThis.MARBLE_ART ||= {}, {"pixel-knight":{"#8caee6,#8caee6,#f
         if(!progress.completed[next]){startLevel(next,'next_puzzle');return}
       }
     }
-    const bloomPetals=round=>Number(round.hintsUsed===0)+Number(round.trayPeak<=5)+Number(round.attempt===1);
     async function selectTube(i){
       if(locked||state.ended||!state.tubes[i]?.length)return;
       const round=state;locked=true;
@@ -474,7 +462,7 @@ Object.assign(globalThis.MARBLE_ART ||= {}, {"pixel-knight":{"#8caee6,#8caee6,#f
       $('tubes').querySelectorAll('button').forEach(button=>button.disabled=true);$('hintBtn').disabled=true;$('restartBtn').disabled=true;
       note(350,.075,'sine',.04);round.moves++;log('marble_pick',{pipe:i+1,color:c,moves:round.moves});
       await fly(from,to,c);if(!isCurrent(round))return;
-      round.tubes[i].shift();round.tray.push(c);round.trayPeak=Math.max(round.trayPeak,round.tray.length);round.landedIndex=round.tray.length-1;render();
+      round.tubes[i].shift();round.tray.push(c);round.landedIndex=round.tray.length-1;render();
       const landingMove=round.moves;
       setTimeout(()=>{if(isCurrent(round)&&round.moves===landingMove){round.landedIndex=null;$('tray').querySelectorAll('.new-ball').forEach(slot=>slot.classList.remove('new-ball'))}},280);
       const hasTriple=round.tray.filter(v=>v===c).length>=3;
@@ -496,8 +484,7 @@ Object.assign(globalThis.MARBLE_ART ||= {}, {"pixel-knight":{"#8caee6,#8caee6,#f
       round.ended=won||lost;round.result=won?'win':lost?'loss':null;locked=false;
       if(won){
         progress.completed[round.levelIndex]=round.painted.slice();progress.unlocked=Math.max(progress.unlocked,Math.min(round.levelIndex+1,LEVELS.length-1));
-        const petals=bloomPetals(round);progress.blooms[LEVELS[round.levelIndex].id]=Math.max(progress.blooms[LEVELS[round.levelIndex].id]||0,petals);
-        log('level_win',{moves:round.moves,matches:round.maxCombo,petals,duration_seconds:Math.round((Date.now()-round.started)/1000)});
+        log('level_win',{moves:round.moves,matches:round.maxCombo,duration_seconds:Math.round((Date.now()-round.started)/1000)});
       }else if(lost)log('level_lose',{moves:round.moves,duration_seconds:Math.round((Date.now()-round.started)/1000)});
       render();
       if(won){await sleep(290);if(isCurrent(round))showWin()}
@@ -523,7 +510,7 @@ Object.assign(globalThis.MARBLE_ART ||= {}, {"pixel-knight":{"#8caee6,#8caee6,#f
       let counts=Array(Math.max(max,PALETTE.length)).fill(0);state.tray.forEach(c=>counts[c]++);
       let path=find([0,0,0],counts);return path?.length?path[0]:null;
     }
-    function getHint(){if(locked||state.ended)return;state.hintsUsed++;render();log('hint_requested');let move=solveMove();
+    function getHint(){if(locked||state.ended)return;log('hint_requested');let move=solveMove();
       if(move===null){toast('No safe route left — try Restart ↻');return}
       const target=$('tubes').querySelector(`[data-pipe="${move}"]`);target?.classList.add('suggested');toast(`Try tube ${move+1} ✨`);setTimeout(()=>target?.classList.remove('suggested'),2700)
     }
@@ -549,11 +536,10 @@ Object.assign(globalThis.MARBLE_ART ||= {}, {"pixel-knight":{"#8caee6,#8caee6,#f
     function showWin(){
       if(state.result!=='win')return;
       const round=state,lvl=LEVELS[round.levelIndex],complete=collectionCount()===LEVELS.length;
-      const petals=bloomPetals(round),criteria=[[round.hintsUsed===0,'No Hint'],[round.trayPeak<=5,'Tray ≤5'],[round.attempt===1,'First Try']];
       const waveComplete=(round.levelIndex+1)%5===0,waveStart=Math.floor(round.levelIndex/5)*5;
       const waveGallery=waveComplete?`<div class="wave-title">${WAVE_NAMES[Math.floor(round.levelIndex/5)]}</div><div class="wave-gallery">${LEVELS.slice(waveStart,waveStart+5).map((item,offset)=>`<div class="wave-art">${drawPattern(item.kind,progress.completed[waveStart+offset]||[],countGroups(item.tubes),getArtPlan(item))}<span>${item.name}</span></div>`).join('')}</div>`:'';
       note(740,.18,'sine',.06);setTimeout(()=>{if(isCurrent(round))note(990,.23,'sine',.06)},120);
-      showModal(`<div class="modal-badge">${waveComplete?'✦ WAVE COLLECTION COMPLETE ✦':'✦ ARTWORK UNLOCKED ✦'}</div>${drawPattern(lvl.kind,round.painted,countGroups(lvl.tubes),getArtPlan(lvl)).replace('class="art-svg"','class="hero-svg"')}<h2>${complete?'Collection complete!':waveComplete?'A new collection is blooming!':'Beautifully done!'}</h2><div class="petal-score" aria-label="${petals} of 3 Perfect Bloom petals">${Array.from({length:3},(_,i)=>`<span class="${i<petals?'earned':''}">✿</span>`).join('')}</div><div class="petal-criteria">${criteria.map(([ok,label])=>`<span class="${ok?'met':'missed'}">${ok?'✓':'·'} ${label}</span>`).join('')}</div>${waveGallery}<p>You completed <strong>${lvl.name}</strong> in ${round.moves} moves. ${complete?`All ${LEVELS.length} artworks are in your collection.`:`${collectionCount()} of ${LEVELS.length} artworks collected.`}</p><button class="primary-btn" id="nextLevel">${complete?'✿ View Collection':'Next Puzzle →'}</button><button class="secondary-btn" id="viewCollection">See Collection</button>`);
+      showModal(`<div class="modal-badge">${waveComplete?'✦ WAVE COLLECTION COMPLETE ✦':'✦ ARTWORK UNLOCKED ✦'}</div>${drawPattern(lvl.kind,round.painted,countGroups(lvl.tubes),getArtPlan(lvl)).replace('class="art-svg"','class="hero-svg"')}<h2>${complete?'Collection complete!':waveComplete?'A new collection is blooming!':'Beautifully done!'}</h2>${waveGallery}<p>You completed <strong>${lvl.name}</strong> in ${round.moves} moves. ${complete?`All ${LEVELS.length} artworks are in your collection.`:`${collectionCount()} of ${LEVELS.length} artworks collected.`}</p><button class="primary-btn" id="nextLevel">${complete?'✿ View Collection':'Next Puzzle →'}</button><button class="secondary-btn" id="viewCollection">See Collection</button>`);
       $('nextLevel').onclick=continueRound;
       $('viewCollection').onclick=showCollection;
     }
@@ -571,7 +557,7 @@ Object.assign(globalThis.MARBLE_ART ||= {}, {"pixel-knight":{"#8caee6,#8caee6,#f
       const first=page*pageSize,last=Math.min(first+pageSize,LEVELS.length);
       const html=LEVELS.slice(first,last).map((lvl,offset)=>{
         const i=first+offset;
-        const painted=progress.completed[i],completed=!!painted,petals=progress.blooms[lvl.id]||0;return `<div class="collection-item ${completed?'':'locked'}"><div>${drawPattern(lvl.kind,painted||[],countGroups(lvl.tubes),getArtPlan(lvl))}</div><div class="name">${lvl.name}</div><div class="tag">${completed?`✿ ${petals}/3 · Collected`:'♡ Locked'}</div></div>`
+        const painted=progress.completed[i],completed=!!painted;return `<div class="collection-item ${completed?'':'locked'}"><div>${drawPattern(lvl.kind,painted||[],countGroups(lvl.tubes),getArtPlan(lvl))}</div><div class="name">${lvl.name}</div><div class="tag">${completed?'✓ Collected':'♡ Locked'}</div></div>`
       }).join('');
       showModal(`<div class="modal-badge">YOUR LITTLE GARDEN</div><h2>Art Collection</h2><p>${collectionCount()} of ${LEVELS.length} artworks collected.</p><div class="collection-grid">${html}</div><div class="collection-nav"><button class="secondary-btn" id="collectionPrev" aria-label="Previous artwork page" ${page===0?'disabled':''}>← Previous</button><span id="collectionPage" aria-live="polite">${first+1}–${last} of ${LEVELS.length}</span><button class="secondary-btn" id="collectionNext" aria-label="Next artwork page" ${page===lastPage?'disabled':''}>Next →</button></div><button class="secondary-btn" id="closeCollection">Back to Puzzle</button>`);
       $('collectionPrev').onclick=()=>showCollection(page-1);
@@ -580,7 +566,7 @@ Object.assign(globalThis.MARBLE_ART ||= {}, {"pixel-knight":{"#8caee6,#8caee6,#f
     }
     const csvCell=value=>`"${String(value??'').replace(/"/g,'""')}"`;
     function statsCSV(){
-      const cols=['time','type','level','pipe','color','moves','matches','combo','petals','duration_seconds','round_id','session_id','source','from_result'];
+      const cols=['time','type','level','pipe','color','moves','matches','combo','duration_seconds','round_id','session_id','source','from_result'];
       return [cols.join(','),...events.map(e=>cols.map(k=>csvCell(e[k])).join(','))].join('\r\n');
     }
     function downloadStats(){
