@@ -36,7 +36,7 @@
     .glass:before{content:"";height:6px;position:absolute;top:-2px;left:-4px;right:-4px;background:linear-gradient(180deg,#f8fefb,#bad8d3);border:1px solid #d0e0d9;border-radius:12px;z-index:1}.glass:after{content:"";height:2px;position:absolute;bottom:5px;left:12px;right:12px;background:#b7ceca99;border-radius:50%}
     .tube-ball{width:25px;height:25px;min-height:25px}.tube-more{font-size:10px;color:#988e93;font-weight:850;line-height:1.15;margin-top:1px}.tube-empty{margin:auto;color:#c3b7b3;font-size:11px}.tube-count{font-size:10px;margin-top:8px;color:#a09595;font-weight:700}
     .bottom-bar{display:flex;gap:9px;margin-top:16px}.secondary-btn{border:1px solid #e7deda;background:white;border-radius:13px;padding:12px 15px;flex:1;font-weight:800;color:#766d76;box-shadow:0 3px 0 #f0e8e1}.secondary-btn:active{transform:translateY(2px)}.primary-btn{border:0;border-radius:13px;padding:13px 18px;background:#dd8197;color:white;font-weight:850;box-shadow:0 4px 0 #c76f85;font-size:14px}.primary-btn:active{transform:translateY(3px);box-shadow:0 1px 0 #c76f85}
-    .footer-note{text-align:center;font-size:9px;color:#b5aaa7;letter-spacing:.3px;margin-top:15px}.toast{position:fixed;z-index:50;left:50%;top:35%;transform:translate(-50%,5px) scale(.94);background:#39343f;color:white;border-radius:99px;padding:10px 17px;font-size:13px;font-weight:750;box-shadow:0 9px 22px #39343f50;opacity:0;pointer-events:none;transition:.23s;white-space:nowrap}.toast.show{opacity:1;transform:translate(-50%,0) scale(1)}
+    .footer-note{text-align:center;font-size:9px;color:#b5aaa7;letter-spacing:.3px;margin-top:15px}.toast{position:fixed;z-index:50;left:50%;bottom:calc(env(safe-area-inset-bottom) + 12px);transform:translate(-50%,5px) scale(.94);background:#39343f;color:white;border-radius:99px;padding:10px 17px;font-size:13px;font-weight:750;box-shadow:0 9px 22px #39343f50;opacity:0;pointer-events:none;transition:.23s;white-space:nowrap}.toast.show{opacity:1;transform:translate(-50%,0) scale(1)}
     .flying{position:fixed;z-index:60;pointer-events:none;width:29px;height:29px;margin:0;will-change:transform}
     .overlay{position:fixed;z-index:100;inset:0;background:#40394578;backdrop-filter:blur(7px);display:none;align-items:center;justify-content:center;padding:18px}.overlay.show{display:flex}.modal{background:#fffcf9;border:1px solid #ffffff;box-shadow:0 18px 80px #39313b55;width:min(100%,410px);max-height:min(90dvh,760px);overflow-y:auto;border-radius:26px;padding:24px;position:relative;text-align:center}.modal-close{position:absolute;right:14px;top:12px;background:#f1eae6;border:0;border-radius:50%;width:30px;height:30px;font-size:19px;color:#80757a;display:grid;place-items:center}.modal h2{font:700 28px/1.13 Georgia,serif;letter-spacing:-.5px;margin:8px 0 8px}.modal p{font-size:13px;line-height:1.55;color:#8e8384;margin:8px auto 16px;max-width:290px}.modal .hero-svg{width:200px;height:150px;margin:0 auto;display:block}.modal .primary-btn{width:100%;margin-top:9px;padding:15px}.modal .secondary-btn{width:100%;margin-top:12px}.modal-badge{display:inline-block;font-size:10px;letter-spacing:1.5px;font-weight:900;color:#c9859a;background:#fdeef2;border-radius:99px;padding:7px 12px}
     .collection-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px;margin-top:16px;text-align:center}.collection-item{border:1px solid #eee4dd;border-radius:15px;background:#fff7f0;padding:7px;min-width:0}.collection-item .art-svg{height:93px;margin:-7px auto -9px;width:100%}.collection-item .name{font-size:11px;font-weight:850;margin:3px 0 5px}.locked{filter:grayscale(.9);opacity:.46}.collection-item .tag{font-size:9px;color:#ab9791;font-weight:750;margin-bottom:4px}
@@ -487,7 +487,7 @@ Object.assign(globalThis.MARBLE_ART ||= {}, {"pixel-knight":{"#8caee6,#8caee6,#f
       if(locked||!state)return;
       const index=state.levelIndex;
       log('level_restart',{moves:state.moves,source,from_result:state.result||'active'});
-      startLevel(index,source,{adUnlocked:state.adUnlocked,adUsed:state.adUsed});toast('Fresh start ✿');
+      startLevel(index,source,{adUnlocked:state.adUnlocked,adUsed:state.adUsed});
     }
     function startupLevel(){
       if(!progress.completed[progress.current])return progress.current;
@@ -540,7 +540,6 @@ Object.assign(globalThis.MARBLE_ART ||= {}, {"pixel-knight":{"#8caee6,#8caee6,#f
       render();
       if(won){await sleep(290);if(isCurrent(round))showWin()}
       else if(lost){note(225,.24,'triangle',.07);await sleep(230);if(isCurrent(round))showLose()}
-      else if(hasTriple){toast(round.combo>=2?`Bloom Chain ×${round.combo}! ✦`:['Lovely! ✿','Perfect match!','Nice pop!','So satisfying!'][Math.floor(Math.random()*4)])}
     }
     function solveMove(){
       const max=state.tubes.reduce((m,t)=>Math.max(m,...t),0)+1;
